@@ -1,0 +1,23 @@
+{
+  "name": "Experis Timesheet Helper",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Swift time keeping in experis",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action" :
+  {
+    "default_icon" : "clock.png",
+    "default_title" : "Experis Timesheet Helper",
+    "default_popup" : "popup.html"
+  },
+  "permissions": [
+          "storage","declarativeContent"
+        ],
+  "content_scripts": [ {
+    "js": [ "content.js", "jquery.js"],
+    "matches": [ "https://*/*", "http://*/*" ]
+  }]
+}
