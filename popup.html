@@ -1,10 +1,131 @@
 <html>
-<head>
-	<title>Options for Color Chooser</title>
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript" src="popup.js"></script>
-</head>
-<body>
-	<button id="fhWeekBtn">40 hr Week</button>
-</body>
+	<head>
+		<title>Options for Color Chooser</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="popup.js"></script>
+	</head>
+	<body>
+
+		<table>
+			<tr>
+				<td><input type="checkbox" id="mon" value="mon" checked=true>Mon</td>
+				<td><input type="checkbox" id="tue" value="tue" checked=true>Tue</td>
+				<td><input type="checkbox" id="wed" value="wed" checked=true>Wed</td>
+				<td><input type="checkbox" id="thu" value="thu" checked=true>Thu</td>
+				<td><input type="checkbox" id="fri" value="fri" checked=true>Fri</td>
+				<td><input type="checkbox" id="sat" value="sat">Sat</td>
+				<td><input type="checkbox" id="sun" value="sun">Sun</td>
+			</tr>
+		</table>
+
+		<table>
+			<tr>
+				<td>
+
+					<label>Start</label>
+
+				</td>
+				<td>
+
+					<select id="startHour">
+					    <option value="6">6</option>
+					    <option value="7">7</option>
+					    <option value="8" selected="true">8</option>
+					    <option value="9">9</option>
+					    <option value="10">10</option>
+					    <option value="11">11</option>
+					    <option value="12">12</option>
+					    <option value="13">13</option>
+					    <option value="14">14</option>
+					    <option value="15">15</option>
+					    <option value="16">16</option>
+					    <option value="17">17</option>
+					    <option value="18">18</option>
+					</select>
+
+				</td>
+
+				<td>
+
+					<select id="startMin">
+					    <option value="00">00</option>
+					    <option value="15">15</option>
+					    <option value="30" selected="true">30</option>
+					    <option value="45">45</option>
+					</select>
+
+				</td>
+			</tr>
+			<tr>
+
+				<td>
+
+					<label>Lunch</label>
+
+				</td>
+				<td>
+
+					<select id="lunchHour">
+					    <option value="0">0</option>
+					    <option value="1">1</option>
+					    <option value="2">2</option>
+					</select>
+
+				</td>
+				<td>
+
+					<select id="lunchMin">
+					    <option value="00">00</option>
+					    <option value="15">15</option>
+					    <option value="30" selected="true">30</option>
+					    <option value="45">45</option>
+					</select>
+
+				</td>
+			</tr>
+
+			<tr>
+
+				<td>
+
+					<label>End</label>
+
+				</td>
+
+				<td>
+
+					<select id="endHour">
+					    <option value="10">10</option>
+					    <option value="11">11</option>
+					    <option value="12">12</option>
+					    <option value="13">13</option>
+					    <option value="14">14</option>
+					    <option value="15">15</option>
+					    <option value="16">16</option>
+					    <option value="17" selected="true">17</option>
+					    <option value="18">18</option>
+					    <option value="19">19</option>
+					    <option value="20">20</option>
+					    <option value="21">21</option>
+					    <option value="22">22</option>
+					</select>
+
+				</td>
+				<td>
+
+					<select id="endMin">
+					    <option value="00">00</option>
+					    <option value="15">15</option>
+					    <option value="30">30</option>
+					    <option value="45">45</option>
+					</select>
+
+				</td>
+			</tr>
+
+		</table>
+
+		<center><button id="btnApply">Apply</button></center>
+
+	</body>
 </html>
