@@ -8,16 +8,15 @@ function setHoursForDay(day,hours)
 	$("select[name='"+day+"EndMinute']").val(hours[5]);
 }
 
-function fullWeek() {
-	['mon', 'tue', 'wed', 'thu', 'fri'].forEach(function(day) {
-	    setHoursForDay(day,[8,45,0,30,17,15]);
+function fillTime(hoursInfo) {
+
+	Object.keys(hoursInfo).forEach(function(day) {
+		setHoursForDay(day, hoursInfo[day]);
 	});
+
 }
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-
-  	fullWeek();
+  	fillTime(request);
 });
-
-   	
