@@ -1,131 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<title>Options for Color Chooser</title>
 		<script type="text/javascript" src="jquery.js"></script>
 		<script type="text/javascript" src="popup.js"></script>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			.formBox {
+				border-radius: 8px;
+				background-color:#F0F0FF;  
+				margin: 10px;
+				border-color: #FFF;
+				border : 1px solid #BBB;
+				padding-top: 10px;
+			}
+		</style>
+
 	</head>
-	<body>
+	<body style="min-width:500px; max-width:500px;">
+		<div class="formBox">
+			<div class="container-fluid form-group">
+			  <div class="row">
+			    <div class="col-xs-6 col-sm-4 col-xs-1 col-xs-offset-2">
+			    	<label for="mon">Mon.</label><input type="checkbox" class="checkbox" id="mon" checked=true>
+			    </div>
+			    <div class="col-xs-6 col-sm-4 col-xs-1">
+			    	<label for="tue">Tue.</label><input type="checkbox" class="checkbox" id="tue" checked=true>
+			    </div>
+			    <div class="col-xs-6 col-sm-4 col-xs-1">
+			    	<label for="wed">Wed.</label><input type="checkbox" class="checkbox" id="wed" checked=true>
+			    </div>
+			    <div class="col-xs-6 col-sm-4 col-xs-1">
+			    	<label for="thu">Thu.</label><input type="checkbox" class="checkbox" id="thu" checked=true>
+			    </div>
+			     <div class="col-xs-6 col-sm-4 col-xs-1">
+			    	<label for="fri">Fri.</label><input type="checkbox" class="checkbox" id="fri" checked=true>
+			    </div>
+			    
+			    <div class="col-xs-6 col-sm-4 col-xs-1">
+			    	<label for="sat">Sat.</label><input type="checkbox" class="checkbox" id="sat" >
+			    </div>
+			    <div class="col-xs-6 col-sm-4 col-xs-1">
+			    	<label for="sun">Sun.</label><input type="checkbox" class="checkbox" id="sun" >
+			    </div>
+			  </div>
+			</div>
+			<br/>
 
-		<table>
-			<tr>
-				<td><input type="checkbox" id="mon" value="mon" checked=true>Mon</td>
-				<td><input type="checkbox" id="tue" value="tue" checked=true>Tue</td>
-				<td><input type="checkbox" id="wed" value="wed" checked=true>Wed</td>
-				<td><input type="checkbox" id="thu" value="thu" checked=true>Thu</td>
-				<td><input type="checkbox" id="fri" value="fri" checked=true>Fri</td>
-				<td><input type="checkbox" id="sat" value="sat">Sat</td>
-				<td><input type="checkbox" id="sun" value="sun">Sun</td>
-			</tr>
-		</table>
+			<div class="container-fluid">
+			 	<div class="row form-group">
+				  	<div class="col-xs-2 col-xs-offset-2">
+				    	<label for="mon">Start</label>
+				    </div>
+				    <div class="col-xs-2">
+				    	<select id="startHour" class="form-control input-sm" placeholder=".col-xs-2">
+						    <option value="6">6</option>
+						    <option value="7">7</option>
+						    <option value="8">8</option>
+						    <option value="9">9</option>
+						    <option value="10">10</option>
+						    <option value="11">11</option>
+						    <option value="12">12</option>
+						    <option value="13">13</option>
+						    <option value="14">14</option>
+						    <option value="15">15</option>
+						    <option value="16">16</option>
+						    <option value="17">17</option>
+						    <option value="18">18</option>
+						</select>
+				    </div>
+				    <div class="col-xs-2">
+						<select id="startMin" class="form-control input-sm">
+						    <option value="00">00</option>
+						    <option value="15">15</option>
+						    <option value="30">30</option>
+						    <option value="45">45</option>
+						</select>
+				    </div>
+			 	</div>
 
-		<table>
-			<tr>
-				<td>
-
-					<label>Start</label>
-
-				</td>
-				<td>
-
-					<select id="startHour">
-					    <option value="6">6</option>
-					    <option value="7">7</option>
-					    <option value="8" selected="true">8</option>
-					    <option value="9">9</option>
-					    <option value="10">10</option>
-					    <option value="11">11</option>
-					    <option value="12">12</option>
-					    <option value="13">13</option>
-					    <option value="14">14</option>
-					    <option value="15">15</option>
-					    <option value="16">16</option>
-					    <option value="17">17</option>
-					    <option value="18">18</option>
-					</select>
-
-				</td>
-
-				<td>
-
-					<select id="startMin">
-					    <option value="00">00</option>
-					    <option value="15">15</option>
-					    <option value="30" selected="true">30</option>
-					    <option value="45">45</option>
-					</select>
-
-				</td>
-			</tr>
-			<tr>
-
-				<td>
-
-					<label>Lunch</label>
-
-				</td>
-				<td>
-
-					<select id="lunchHour">
-					    <option value="0">0</option>
-					    <option value="1">1</option>
-					    <option value="2">2</option>
-					</select>
-
-				</td>
-				<td>
-
-					<select id="lunchMin">
-					    <option value="00">00</option>
-					    <option value="15">15</option>
-					    <option value="30" selected="true">30</option>
-					    <option value="45">45</option>
-					</select>
-
-				</td>
-			</tr>
-
-			<tr>
-
-				<td>
-
-					<label>End</label>
-
-				</td>
-
-				<td>
-
-					<select id="endHour">
-					    <option value="10">10</option>
-					    <option value="11">11</option>
-					    <option value="12">12</option>
-					    <option value="13">13</option>
-					    <option value="14">14</option>
-					    <option value="15">15</option>
-					    <option value="16">16</option>
-					    <option value="17" selected="true">17</option>
-					    <option value="18">18</option>
-					    <option value="19">19</option>
-					    <option value="20">20</option>
-					    <option value="21">21</option>
-					    <option value="22">22</option>
-					</select>
-
-				</td>
-				<td>
-
-					<select id="endMin">
-					    <option value="00">00</option>
-					    <option value="15">15</option>
-					    <option value="30">30</option>
-					    <option value="45">45</option>
-					</select>
-
-				</td>
-			</tr>
-
-		</table>
-
-		<center><button id="btnApply">Apply</button></center>
-
+			 	<div class="row form-group">
+				  	<div class="col-xs-2 col-xs-offset-2" >
+				    	<label for="mon" inline="display: inline-block;vertical-align: middle;float: none;">Lunch</label>
+				    </div>
+				    <div class="col-xs-2">
+				    	<select id="lunchHour" class="form-control input-sm">
+						    <option value="0">0</option>
+						    <option value="1">1</option>
+						    <option value="2">2</option>
+						</select>
+				    </div>
+				    <div class="col-xs-2">
+						<select id="lunchMin" class="form-control input-sm">
+						    <option value="00">00</option>
+						    <option value="15">15</option>
+						    <option value="30">30</option>
+						    <option value="45">45</option>
+						</select>
+				    </div>
+			 	</div>
+			 	<div class="row form-group">
+				  	<div class="col-xs-2 col-xs-offset-2">
+				    	<label for="mon">Finish</label>
+				    </div>
+				    <div class="col-xs-2">
+				    	<select id="endHour" class="form-control input-sm">
+						    <option value="6">6</option>
+						    <option value="7">7</option>
+						    <option value="8">8</option>
+						    <option value="9">9</option>
+						    <option value="10">10</option>
+						    <option value="11">11</option>
+						    <option value="12">12</option>
+						    <option value="13">13</option>
+						    <option value="14">14</option>
+						    <option value="15">15</option>
+						    <option value="16">16</option>
+						    <option value="17">17</option>
+						    <option value="18">18</option>
+						    <option value="19">19</option>
+						    <option value="20">20</option>
+						    <option value="21">21</option>
+						    <option value="22">22</option>						    						    				
+						    <option value="23">23</option>						    		    
+						</select>
+				    </div>
+				    <div class="col-xs-2">
+						<select id="endMin" class="form-control input-sm">
+						    <option value="00">00</option>
+						    <option value="15">15</option>
+						    <option value="30">30</option>
+						    <option value="45">45</option>
+						</select>
+				    </div>
+			 	</div>
+			 	<div class="row form-group">
+			 		<div class="col-xs-3 col-xs-offset-9">
+			 			<button id="btnApply" class="btn btn-primary" >Apply</button>
+			 		</div>	
+			 	</div>
+			</div>
+		</div>
 	</body>
 </html>
