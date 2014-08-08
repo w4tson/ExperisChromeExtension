@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //use the prefs if they're there
     chrome.storage.sync.get('experisHours', function(items) {
-  	  setHours(items.settings);
+  	  setHours(items.experisHours);
     });
 });
 
