@@ -18,5 +18,13 @@ function fillTime(hoursInfo) {
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-  	fillTime(request);
+
+  	if (request.daysArray) {
+  		fillTime(request.daysArray);	
+  	}
+
+  	if (request.log) {
+  		console.log(request.log);
+  	}
+  	
 });

@@ -24,53 +24,45 @@ function fillTime() {
 		daysArray[$(this).attr('id')] = currentSettings;
 	});
 
-	chrome.storage.sync.set({'settings': currentSettings}, function() {
-      // Notify that we saved.
-      //alert('Settings saved');
+	chrome.storage.sync.set({'experisHours': currentSettings}, function() {
+      log('settings saved');
     });
 
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-	  chrome.tabs.sendMessage(tabs[0].id, daysArray, function(response) {
+	  chrome.tabs.sendMessage(tabs[0].id, { daysArray : daysArray }, function(response) {
 	    console.log(response.farewell);
 	  });
 	});
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-
-  $("#btnApply").click(function() {
+    $("#btnApply").click(function() {
 	  fillTime();
 	});
 
-  $("#foo").click(function() {
-	  chrome.storage.sync.get('settings', function(items) {
-	  	console.log("items="+items);
-	  	items.forEach(function(day) {
-	  		console.log(day);
-	  	});
+	//always set to the defaults first
+	setHours([9,0,0,30,17,30]);
+
+    //use the prefs if they're there
+    chrome.storage.sync.get('experisHours', function(items) {
+  	  setHours(items.settings);
+    });
+});
+
+//sets the hours for the popup
+function setHours(hours) {
+	$("#startHour").val(hours[0]);
+	$("#startMin").val(hours[1]);
+	$("#lunchHour").val(hours[2]);
+	$("#lunchMin").val(hours[3]);
+	$("#endHour").val(hours[4]);
+	$("#endMin").val(hours[5]);
+}
+
+
+function log(msg) {
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+	  chrome.tabs.sendMessage(tabs[0].id, { log: msg }, function(response) {
 	  });
 	});
-
-	var defaultsArray = [9,0,0,30,17,30]
-	var startHour = $("#startHour");
-	var startMin = $("#startMin");
-	var lunchHour = $("#lunchHour");
-	var lunchMin = $("#lunchMin");
-	var endHour = $("#endHour");
-	var endMin = $("#endMin");
-
-	startHour.val(defaultsArray[0]);
-	startMin.val(defaultsArray[1]);
-	lunchHour.val(defaultsArray[2]);
-	lunchMin.val(defaultsArray[3]);
-	endHour.val(defaultsArray[4]);
-	endMin.val(defaultsArray[5]);
-	
-	
-	
-	
-	
-
-	
-  
-});
+}
